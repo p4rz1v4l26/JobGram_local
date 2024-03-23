@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import fileUploader from "express-fileupload";
+import fileUpload from "express-fileupload";
 import userRouter from "./routes/userRouter.js";
 import applicationRouter from "./routes/applicationRouter.js";
 import jobRouter from "./routes/jobRouter.js";
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
-  fileUploader({
+  fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/",
   })
@@ -34,6 +34,7 @@ app.use(
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/application", applicationRouter);
 app.use("/api/v1/job", jobRouter);
+
 
 dbConnection();
 
