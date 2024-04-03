@@ -22,29 +22,29 @@ export const postApplication = catchAsyncError(async (req, res, next) => {
       new ErrorHandler("Invalid file type. Please upload a Appropriate file.", 400)
     );
   }
-//   const cloudinaryResponse = await cloudinary.uploader.upload(
-//     resume.tempFilePath
-//   );
-
-//   if (!cloudinaryResponse || cloudinaryResponse.error) {
-//     console.error(
-//       "Cloudinary Error:",
-//       cloudinaryResponse.error || "Unknown Cloudinary error"
-//     );
-//     return next(new ErrorHandler("Failed to upload Resume to Cloudinary", 500));
-//   }
-//   const { name, email, coverLetter, phone, address, jobId } = req.body;
-//   const applicantID = {
-//     user: req.user._id,
-//     role: "Job Seeker",
-//   };
-//   if (!jobId) {
-//     return next(new ErrorHandler("Job not found!", 404));
-//   }
-//   const jobDetails = await Job.findById(jobId);
-//   if (!jobDetails) {
-//     return next(new ErrorHandler("Job not found!", 404));
-//   }
+  const cloudinaryResponse = await cloudinary.uploader.upload(
+    resume.tempFilePath
+  );
+  
+  if (!cloudinaryResponse || cloudinaryResponse.error) {
+    console.error(
+      "Cloudinary Error:",
+      cloudinaryResponse.error || "Unknown Cloudinary error"
+    );
+    return next(new ErrorHandler("Failed to upload Resume to Cloudinary", 500));
+  }
+  const { name, email, coverLetter, phone, address, jobId } = req.body;
+  const applicantID = {
+    user: req.user._id,
+    role: "Job Seeker",
+  };
+  if (!jobId) {
+    return next(new ErrorHandler("Job not found!", 404));
+  }
+  const jobDetails = await Job.findById(jobId);
+  if (!jobDetails) {
+    return next(new ErrorHandler("Job not found!", 404));
+  }
 
 //   const employerID = {
 //     user: jobDetails.postedBy,
