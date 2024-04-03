@@ -25,7 +25,7 @@ export const postApplication = catchAsyncError(async (req, res, next) => {
   const cloudinaryResponse = await cloudinary.uploader.upload(
     resume.tempFilePath
   );
-  
+
   if (!cloudinaryResponse || cloudinaryResponse.error) {
     console.error(
       "Cloudinary Error:",
@@ -46,41 +46,41 @@ export const postApplication = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler("Job not found!", 404));
   }
 
-//   const employerID = {
-//     user: jobDetails.postedBy,
-//     role: "Employer",
-//   };
-//   if (
-//     !name ||
-//     !email ||
-//     !coverLetter ||
-//     !phone ||
-//     !address ||
-//     !applicantID ||
-//     !employerID ||
-//     !resume
-//   ) {
-//     return next(new ErrorHandler("Please fill all fields.", 400));
-//   }
-//   const application = await Application.create({
-//     name,
-//     email,
-//     coverLetter,
-//     phone,
-//     address,
-//     applicantID,
-//     employerID,
-//     resume: {
-//       public_id: cloudinaryResponse.public_id,
-//       url: cloudinaryResponse.secure_url,
-//     },
-//   });
-//   res.status(200).json({
-//     success: true,
-//     message: "Application Submitted!",
-//     application,
-//   });
-// });
+  const employerID = {
+    user: jobDetails.postedBy,
+    role: "Employer",
+  };
+  if (
+    !name ||
+    !email ||
+    !coverLetter ||
+    !phone ||
+    !address ||
+    !applicantID ||
+    !employerID ||
+    !resume
+  ) {
+    return next(new ErrorHandler("Please fill all fields.", 400));
+  }
+  const application = await Application.create({
+    name,
+    email,
+    coverLetter,
+    phone,
+    address,
+    applicantID,
+    employerID,
+    resume: {
+      public_id: cloudinaryResponse.public_id,
+      url: cloudinaryResponse.secure_url,
+    },
+  });
+  res.status(200).json({
+    success: true,
+    message: "Application Submitted!",
+    application,
+  });
+});
 
 export const employerGetAllApplications = catchAsyncError(
   async (req, res, next) => {
