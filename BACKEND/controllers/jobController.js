@@ -111,16 +111,16 @@ export const deleteJob = catchAsyncError(async (req, res, next) => {
       new ErrorHandler("Job Seeker not allowed to access this resource.", 400)
     );
   }
-//   const { id } = req.params;
-//   const job = await Job.findById(id);
-//   if (!job) {
-//     return next(new ErrorHandler("OOPS! Job not found.", 404));
-//   }
-//   await job.deleteOne();
-//   res.status(200).json({
-//     success: true,
-//     message: "Job Deleted!",
-//   });
+  const { id } = req.params;
+  const job = await Job.findById(id);
+  if (!job) {
+    return next(new ErrorHandler("OOPS! Job not found.", 404));
+  }
+  await job.deleteOne();
+  res.status(200).json({
+    success: true,
+    message: "Job Deleted!",
+  });
 });
 
 // export const getSingleJob = catchAsyncErrors(async (req, res, next) => {
