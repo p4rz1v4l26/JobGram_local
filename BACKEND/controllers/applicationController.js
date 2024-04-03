@@ -4,7 +4,7 @@ import { Application } from "../models/applicationSchema.js";
 import { Job } from "../models/jobSchema.js";
 import cloudinary from "cloudinary";
 
-export const postApplication = catchAsyncErrors(async (req, res, next) => {
+export const postApplication = catchAsyncError(async (req, res, next) => {
   const { role } = req.user;
   if (role === "Employer") {
     return next(
@@ -82,7 +82,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-export const employerGetAllApplications = catchAsyncErrors(
+export const employerGetAllApplications = catchAsyncError(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Job Seeker") {
@@ -99,7 +99,7 @@ export const employerGetAllApplications = catchAsyncErrors(
   }
 );
 
-export const jobseekerGetAllApplications = catchAsyncErrors(
+export const jobseekerGetAllApplications = catchAsyncError(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Employer") {
@@ -116,7 +116,7 @@ export const jobseekerGetAllApplications = catchAsyncErrors(
   }
 );
 
-export const jobseekerDeleteApplication = catchAsyncErrors(
+export const jobseekerDeleteApplication = catchAsyncError(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Employer") {
