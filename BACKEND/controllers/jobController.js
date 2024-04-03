@@ -104,13 +104,13 @@ export const updateJob = catchAsyncError(async (req, res, next) => {
   });
 });
 
-// export const deleteJob = catchAsyncErrors(async (req, res, next) => {
-//   const { role } = req.user;
-//   if (role === "Job Seeker") {
-//     return next(
-//       new ErrorHandler("Job Seeker not allowed to access this resource.", 400)
-//     );
-//   }
+export const deleteJob = catchAsyncError(async (req, res, next) => {
+  const { role } = req.user;
+  if (role === "Job Seeker") {
+    return next(
+      new ErrorHandler("Job Seeker not allowed to access this resource.", 400)
+    );
+  }
 //   const { id } = req.params;
 //   const job = await Job.findById(id);
 //   if (!job) {
@@ -121,7 +121,7 @@ export const updateJob = catchAsyncError(async (req, res, next) => {
 //     success: true,
 //     message: "Job Deleted!",
 //   });
-// });
+});
 
 // export const getSingleJob = catchAsyncErrors(async (req, res, next) => {
 //   const { id } = req.params;
