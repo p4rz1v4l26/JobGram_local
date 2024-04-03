@@ -91,7 +91,7 @@ export const updateJob = catchAsyncError(async (req, res, next) => {
   const { id } = req.params;
   let job = await Job.findById(id);
   if (!job) {
-    return next(new ErrorHandler("Sorry ! Job not found.", 404));
+    return next(new ErrorHandler("OOPS! Job not found.", 404));
   }
   job = await Job.findByIdAndUpdate(id, req.body, {
     new: true,
