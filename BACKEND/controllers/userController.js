@@ -57,11 +57,11 @@ export const logout = catchAsyncError(async (req, res, next) => {
     });
 });
 
-// export const getUser = catchAsyncError((req, res, next) => {
-//   const user = req.user;
-//   res.status(200).json({
-//     success: true,
-//     message: "User Registered successfully",
-//     user,
-//   });
-// });
+export const getUser = catchAsyncError((req, res, next) => {
+  const user = req.user;
+  res.status(200).json({
+    success: true,
+    message: "User Registered successfully",
+    user,
+  });
+});
