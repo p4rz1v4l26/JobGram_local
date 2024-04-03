@@ -2,26 +2,26 @@ import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import ErrorHandler from "../middlewares/error.js";
 import { Application } from "../models/applicationSchema.js";
 // import { Job } from "../models/jobSchema.js";
-// import cloudinary from "cloudinary";
+import cloudinary from "cloudinary";
 
-// export const postApplication = catchAsyncError(async (req, res, next) => {
-//   const { role } = req.user;
-//   if (role === "Employer") {
-//     return next(
-//       new ErrorHandler("Employer not allowed to access this resource.", 400)
-//     );
-//   }
-//   if (!req.files || Object.keys(req.files).length === 0) {
-//     return next(new ErrorHandler("Resume File Required!", 400));
-//   }
+export const postApplication = catchAsyncError(async (req, res, next) => {
+  const { role } = req.user;
+  if (role === "Employer") {
+    return next(
+      new ErrorHandler("Employer not allowed to access this resource.", 400)
+    );
+  }
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return next(new ErrorHandler("Resume File Required!", 400));
+  }
 
-//   const { resume } = req.files;
-//   const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
-//   if (!allowedFormats.includes(resume.mimetype)) {
-//     return next(
-//       new ErrorHandler("Invalid file type. Please upload a PNG file.", 400)
-//     );
-//   }
+  const { resume } = req.files;
+  const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
+  if (!allowedFormats.includes(resume.mimetype)) {
+    return next(
+      new ErrorHandler("Invalid file type. Please upload a Appropriate file.", 400)
+    );
+  }
 //   const cloudinaryResponse = await cloudinary.uploader.upload(
 //     resume.tempFilePath
 //   );
