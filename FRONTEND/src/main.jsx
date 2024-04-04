@@ -4,13 +4,19 @@ import App from "./App.jsx";
 
 export const Context = createContext({ isAuthorized: false });
 
-export AppWrapper = ()=> {
-  const [isAuthorized, serIsAuthorized] = useState();
-  const [user,setUser] = useState();
-}
+const AppWrapper = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [user, setUser] = useState({});
+
+  return (
+    <Context.Provider value={{ isAuthorized, setIsAuthorized, user, setUser }}>
+      <App />
+    </Context.Provider>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <AppWrapper />
   </React.StrictMode>
 );
