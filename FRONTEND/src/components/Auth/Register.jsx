@@ -95,7 +95,7 @@ const Register = () => {
               <label>Phone Number</label>
               <div>
                 <input
-                  type="number"
+                  type="tel"
                   placeholder="12345678"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -122,7 +122,7 @@ const Register = () => {
           </form>
         </div>
         <div className="banner">
-          <img src="/register.jpg" alt="login" />
+          <img src="/register.jpg" alt="register" />
         </div>
       </section>
     </>
