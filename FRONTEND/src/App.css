@@ -134,7 +134,7 @@ p {
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #2d5649;
+  background: #f3ad2b;
   height: 100%;
   padding: 8px;
   color: #fff;
@@ -146,17 +146,17 @@ p {
   margin-top: 25px;
   font-weight: 700;
   color: #fff;
-  background: #2d5649;
+  background: #f3ad2b;
   font-size: 1.2rem;
   border-radius: 7px;
 }
 .authPage .container form a {
   padding: 12px;
   text-align: center;
-  border: 1px solid #2d5649;
+  border: 1px solid #f3ad2b;
   margin-top: 25px;
   font-weight: 700;
-  color: #2d5649;
+  color: #f3ad2b;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;
@@ -214,7 +214,7 @@ p {
   color: #f1f3f6;
 }
 .footerShow div a:hover {
-  color: #2d5649;
+  color: #f3ad2b;
   transform: scale(1.2);
   transition: all 0.3s;
 }
@@ -296,7 +296,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  color: #2d5649;
+  color: #f3ad2b;
 }
 .heroSection .details .card .content p:first-child {
   font-weight: bold;
@@ -401,7 +401,7 @@ p {
 }
 .howitworks .container .banner .card svg {
   font-size: 30px;
-  color: #2d5649;
+  color: #f3ad2b;
 }
 .howitworks .container .banner .card p:last-child {
   font-size: 14px;
@@ -465,7 +465,7 @@ p {
   font-size: 24px;
   padding: 10px;
   background: rgb(233, 249, 255);
-  color: #2d5649;
+  color: #f3ad2b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -540,7 +540,7 @@ p {
 .companies .container .banner .card .content .icon {
   padding: 10px;
   font-size: 24px;
-  color: #2d5649;
+  color: #f3ad2b;
   background: rgb(233, 249, 255);
   display: flex;
   justify-content: center;
@@ -555,7 +555,7 @@ p {
   color: gray;
 }
 .companies .container .banner .card button {
-  color: #2d5649;
+  color: #f3ad2b;
   background: rgb(233, 249, 255);
   font-weight: bold;
   font-size: 20px;
@@ -639,7 +639,7 @@ p {
   text-decoration: none;
   padding: 7px;
   font-size: 20px;
-  color: #2d5649;
+  color: #f3ad2b;
   background: rgb(233, 249, 255);
   width: 100%;
   display: block;
@@ -684,14 +684,14 @@ p {
 }
 .jobDetail .container .banner p {
   font-weight: bold;
-  color: #2d5649;
+  color: #f3ad2b;
 }
 .jobDetail .container .banner p span {
   color: #18191c;
   font-weight: 400;
 }
 .jobDetail .container .banner a {
-  background-color: #2d5649;
+  background-color: #f3ad2b;
   color: rgb(233, 249, 255);
   font-size: 20px;
   font-weight: 400;
@@ -745,7 +745,7 @@ p {
   outline: none;
 }
 .application .container form button {
-  background-color: #2d5649;
+  background-color: #f3ad2b;
   color: rgb(233, 249, 255);
   font-size: 20px;
   font-weight: 400;
@@ -943,7 +943,7 @@ p {
 }
 .job_post .container form button {
   width: 100%;
-  background: #2d5649;
+  background: #f3ad2b;
   font-size: 20px;
   padding: 10px 30px;
   border: none;
@@ -1197,7 +1197,7 @@ nav .menu li a {
   position: relative;
 }
 nav .menu li a:hover {
-  color: #2d5649;
+  color: #f3ad2b;
   transition: all 0.3s;
 }
 nav .menu li a::before {
