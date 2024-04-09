@@ -54,3 +54,17 @@ const MyJobs = () => {
         toast.error(error.response.data.message);
       });
   };
+
+  const handleDeleteJob = async (jobId) => {
+    await axios
+      .delete(`http://localhost:4000/api/v1/job/delete/${jobId}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        toast.success(res.data.message);
+        setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
+  };
