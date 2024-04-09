@@ -39,3 +39,18 @@ const MyJobs = () => {
   const handleDisableEdit = () => {
     setEditingMode(null);
   };
+
+  const handleUpdateJob = async (jobId) => {
+    const updatedJob = myJobs.find((job) => job._id === jobId);
+    await axios
+      .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        toast.success(res.data.message);
+        setEditingMode(null);
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
+  };
