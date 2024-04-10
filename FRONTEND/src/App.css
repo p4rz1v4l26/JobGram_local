@@ -1349,3 +1349,16 @@ nav .hamburger {
     z-index: 11;
   }
 }
+.search-bar {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #007bff;
+}
